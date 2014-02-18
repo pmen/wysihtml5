@@ -7527,7 +7527,7 @@ wysihtml5.Commands = Base.extend(
       } else {
         // Create list
         composer.commands.exec("formatBlock", "div", tempClassName);
-        tempElement = doc.querySelector("." + tempClassName);
+        tempElement = doc.querySelector("." + tempClassName) || {};
         isEmpty = tempElement.innerHTML === "" || tempElement.innerHTML === wysihtml5.INVISIBLE_SPACE;
         composer.selection.executeAndRestoreSimple(function() {
           list = wysihtml5.dom.convertToList(tempElement, "ol");
@@ -7584,7 +7584,7 @@ wysihtml5.Commands = Base.extend(
       } else {
         // Create list
         composer.commands.exec("formatBlock", "div", tempClassName);
-        tempElement = doc.querySelector("." + tempClassName);
+        tempElement = doc.querySelector("." + tempClassName) || {};
         isEmpty = tempElement.innerHTML === "" || tempElement.innerHTML === wysihtml5.INVISIBLE_SPACE;
         composer.selection.executeAndRestoreSimple(function() {
           list = wysihtml5.dom.convertToList(tempElement, "ul");
